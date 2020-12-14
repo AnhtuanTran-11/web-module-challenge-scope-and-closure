@@ -28,11 +28,12 @@ console.log(processFirstItem(['foo','bar'],function(str){return str+str}));
   Study the code for counter1 and counter2, then answer the questions below.
   
   1. What is the difference between counter1 and counter2?
-  
+  Counter1 has a local count variable and Counter2 has a global count variable.
   2. Which of the two uses a closure? How can you tell?
-  
+  Counter1 has closure because it has a nested function that has access to its parent scope.
   3. In what scenario would the counter1 code be preferable? In what scenario would 
-     counter2 be better?  
+     counter2 be better?
+     Counter1 would be preferable if you only want the count variable to exist inside the function. Counter 2 would be better if you would like the count variable to available across your script.
 */
 
 // counter1 code
@@ -42,7 +43,6 @@ function counterMaker() {
    return count++;
   }
 }
-
 const counter1 = counterMaker();
 
 // counter2 code
@@ -51,7 +51,6 @@ let count = 0;
 function counter2() {
   return count++;
 }
-
 
 /* ⚾️⚾️⚾️ Task 2: inning() ⚾️⚾️⚾️
 Use the inning function below to do the following:
